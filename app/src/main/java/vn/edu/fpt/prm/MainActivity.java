@@ -8,7 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.tour_booking_system.R;
+import vn.edu.fpt.prm.R;
 
 public class MainActivity extends AppCompatActivity {
 

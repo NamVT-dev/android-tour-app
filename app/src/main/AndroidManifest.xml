@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--Khai báo các quyền-->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -16,16 +14,17 @@
         android:theme="@style/Theme.TourBookingSystem"
         tools:targetApi="31">
 
-        <!-- Khai báo các activity-->
+        <!-- Đây sẽ là màn hình chính khi chạy ứng dụng -->
         <activity
-            android:name="vn.edu.fpt.prm.MainActivity"
+            android:name="vn.edu.fpt.prm.features.profile.activities.ProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- Giữ lại MainActivity nếu bạn vẫn cần nó -->
+        <activity android:name="vn.edu.fpt.prm.MainActivity" />
+    </application>
 </manifest>
