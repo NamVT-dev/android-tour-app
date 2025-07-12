@@ -1,5 +1,6 @@
 package vn.edu.fpt.prm.features.profile.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -57,7 +58,14 @@ public class ProfileActivity extends AppCompatActivity {
         fetchBookings("Bearer " + token);
 
         btnEdit.setOnClickListener(v -> {
-            // TODO: xử lý chỉnh sửa thông tin cá nhân
+            // Tạo Intent để chuyển sang màn hình chỉnh sửa
+            Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
+
+            // (Tuỳ chọn) Truyền thông tin user hiện tại sang màn hình edit
+            intent.putExtra("name", txtName.getText().toString());
+            intent.putExtra("email", txtEmail.getText().toString());
+
+            startActivity(intent);  // Chuyển màn hình
         });
     }
 

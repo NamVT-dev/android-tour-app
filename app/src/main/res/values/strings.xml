@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TourBookingSystem</string>
+    <string name="edit_profile_title">Edit your profile</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="change_password">Change password</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="cd_open_camera">Open Camera</string>
+    <string name="cd_open_gallery">Open Gallery</string>
+    <string name="cd_avatar">Profile Avatar</string>
 </resources>
