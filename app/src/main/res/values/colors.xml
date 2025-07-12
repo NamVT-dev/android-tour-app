@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="paidColor">#4CAF50</color>       <!-- Xanh cho "Paid: Yes" -->
+    <color name="unpaidColor">#F44336</color>     <!-- Đỏ cho "Paid: No" -->
 </resources>
