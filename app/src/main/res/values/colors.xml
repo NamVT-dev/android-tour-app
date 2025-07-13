@@ -2,4 +2,32 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Glassmorphism Cyan Theme -->
+    <color name="primary_blue">#77dada</color>
+    <color name="primary_blue_dark">#5bc8c8</color>
+    <color name="primary_blue_light">#a8e6e6</color>
+    <color name="accent_blue">#77dada</color>
+    <color name="accent_blue_dark">#5bc8c8</color>
+    
+    <!-- Glassmorphism Colors -->
+    <color name="glass_white">#FFFFFF</color>
+    <color name="glass_white_80">#CCFFFFFF</color>
+    <color name="glass_white_60">#99FFFFFF</color>
+    <color name="glass_white_40">#66FFFFFF</color>
+    <color name="glass_white_20">#33FFFFFF</color>
+    
+    <!-- Background Gradients -->
+    <color name="bg_primary">#2a7a7a</color>
+    <color name="bg_secondary">#77dada</color>
+    <color name="bg_tertiary">#a8e6e6</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#E8F8F8</color>
+    <color name="text_hint">#D4F0F0</color>
+    
+    <!-- Error Colors -->
+    <color name="error_red">#F44336</color>
+    <color name="success_green">#4CAF50</color>
 </resources>
