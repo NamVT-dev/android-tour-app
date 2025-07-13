@@ -1,8 +1,9 @@
 package vn.edu.fpt.prm.features.tour;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Location {
+public class Location implements Serializable {
     private String id;
     private String type;
     private List<Double> coordinates;

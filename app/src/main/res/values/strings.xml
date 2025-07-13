@@ -83,4 +83,19 @@
     <string name="avatar">Avatar</string>
     <string name="t_m_ki_m_theo_t_n_tour_a_i_m">Tìm kiếm theo tên tour, địa điểm...</string>
     <string name="filter">Filter distance</string>
+    <string name="destinations">Destinations</string>
+    <string name="guides">Guides</string>
+    <string name="only_499_000">Only ₫499,000</string>
+    <string name="start_location">Start Location</string>
+    <string name="ho_chi_minh_city">Ho Chi Minh City</string>
+    <string name="aug_16_2025">Aug 16, 2025</string>
+    <string name="start_date">Start Date</string>
+    <string name="breathtaking_views_of_the_alps_and_unforgettable_experiences_await_you">Breathtaking views of the Alps and unforgettable experiences await you.</string>
+    <string name="tour_banner">Tour Banner</string>
+    <string name="back">Back</string>
+    <string name="ha_long_bay">Ha Long Bay</string>
+    <string name="day_1">Day 1</string>
+    <string name="guide_name">Guide Name</string>
+    <string name="tour_guide">Tour Guide</string>
+    <string name="guide_avatar">Guide Avatar</string>
 </resources>

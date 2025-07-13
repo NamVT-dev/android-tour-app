@@ -44,6 +44,7 @@ dependencies {
 
     // Glide
     implementation(libs.glide)
+    implementation(libs.play.services.maps)
     annotationProcessor(libs.glide.compiler)
 
     // Google Play Services
