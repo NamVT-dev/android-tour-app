@@ -18,6 +18,8 @@ import vn.edu.fpt.prm.core.prefs.AuthManager;
 import vn.edu.fpt.prm.core.utils.Logger;
 import vn.edu.fpt.prm.core.widget.Toaster;
 import vn.edu.fpt.prm.features.auth.activities.LoginActivity;
+import vn.edu.fpt.prm.navigation.Navigator;
+import vn.edu.fpt.prm.navigation.Screen;
 
 public class ApiClient {
     private static Retrofit retrofit;
@@ -63,9 +65,7 @@ public class ApiClient {
                 });
 
                 // Redirect to login activity
-                Intent intent = new Intent(context, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                context.startActivity(intent);
+                Navigator.goToAndFinish(context, Screen.LOGIN);
             }
 
             return response;

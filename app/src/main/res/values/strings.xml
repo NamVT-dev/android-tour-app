@@ -71,4 +71,16 @@
     
     <!-- Main Activity -->
     <string name="welcome_message">Welcome to Tour Booking System!\n\nYour account has been created successfully.</string>
+    <string name="austria">Austria</string>
+    <string name="tour_image">Tour Image</string>
+    <string name="duration">Duration</string>
+    <string name="duration_value">10 Days</string>
+    <string name="breathtaking_view_of_the_alps">Breathtaking view of the Alps</string>
+    <string name="the_austrian_mountains">The Austrian Mountains</string>
+    <string name="rating_value">4.9</string>
+    <string name="price">$300.00</string>
+    <string name="price_discount">$200.00</string>
+    <string name="avatar">Avatar</string>
+    <string name="t_m_ki_m_theo_t_n_tour_a_i_m">Tìm kiếm theo tên tour, địa điểm...</string>
+    <string name="filter">Filter distance</string>
 </resources>
