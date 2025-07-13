@@ -47,6 +47,14 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
+        etName = findViewById(R.id.etName);
+        etEmail = findViewById(R.id.etEmail);
+        etCurrentPassword = findViewById(R.id.etCurrentPassword);
+        etNewPassword = findViewById(R.id.etNewPassword);
+        etConfirmPassword = findViewById(R.id.etConfirmPassword);
+        imgAvatar = findViewById(R.id.imgAvatar);
+        passwordContainer = findViewById(R.id.passwordContainer);
+
         // Nhận dữ liệu từ Intent (nếu có)
         Intent intent = getIntent();
         if (intent != null) {
@@ -56,16 +64,6 @@ public class EditProfileActivity extends AppCompatActivity {
             if (name != null) etName.setText(name);
             if (email != null) etEmail.setText(email);
         }
-
-
-        etName = findViewById(R.id.etName);
-        etEmail = findViewById(R.id.etEmail);
-        etCurrentPassword = findViewById(R.id.etCurrentPassword);
-        etNewPassword = findViewById(R.id.etNewPassword);
-        etConfirmPassword = findViewById(R.id.etConfirmPassword);
-        imgAvatar = findViewById(R.id.imgAvatar);
-        passwordContainer = findViewById(R.id.passwordContainer);
-
         Button btnSave = findViewById(R.id.btnSave);
         Button btnCancel = findViewById(R.id.btnCancel);
         Button btnChangePassword = findViewById(R.id.btnChangePassword);

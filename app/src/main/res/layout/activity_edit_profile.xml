@@ -88,7 +88,11 @@
             android:background="@android:color/transparent"
             android:gravity="center"
             android:textSize="18sp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:focusable="false"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:longClickable="false"/>
 
         <!-- Password Fields -->
         <LinearLayout
@@ -105,7 +109,8 @@
                 android:hint="@string/current_password"
                 android:autofillHints="password"
                 android:inputType="textPassword"
-                android:textColor="#FFFF00"
+                android:textColorHint="#CCCCCC"
+                android:textColor="#FFFFFF"
                 android:minHeight="48dp"
                 android:layout_marginBottom="8dp"/>
 
@@ -116,7 +121,8 @@
                 android:hint="@string/new_password"
                 android:autofillHints="password"
                 android:inputType="textPassword"
-                android:textColor="#FFFF00"
+                android:textColorHint="#CCCCCC"
+                android:textColor="#FFFFFF"
                 android:minHeight="48dp"
                 android:layout_marginBottom="8dp"/>
 
@@ -127,7 +133,8 @@
                 android:hint="@string/confirm_password"
                 android:autofillHints="password"
                 android:inputType="textPassword"
-                android:textColor="#FFFF00"
+                android:textColorHint="#CCCCCC"
+                android:textColor="#FFFFFF"
                 android:minHeight="48dp"/>
         </LinearLayout>
 
