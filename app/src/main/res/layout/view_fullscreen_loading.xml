@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fullscreen_loading_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:visibility="gone"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ProgressBar
+    android:id="@+id/progress_bar"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:layout_gravity="center"
+    android:indeterminate="true"
+    android:indeterminateTint="@color/primary_blue" />
+</FrameLayout>

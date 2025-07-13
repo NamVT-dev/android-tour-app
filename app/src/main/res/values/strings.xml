@@ -1,3 +1,74 @@
 <resources>
     <string name="app_name">TourBookingSystem</string>
+    
+    <!-- Signup Screen -->
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_subtitle">Create your account to get started</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="create_account_button">Create Account</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="sign_in_link">Sign In</string>
+    <string name="login_coming_soon">Login screen coming soon!</string>
+    
+    <!-- Validation Messages -->
+    <string name="name_required">Name is required</string>
+    <string name="email_required">Email is required</string>
+    <string name="valid_email_required">Please enter a valid email</string>
+    <string name="password_required">Password is required</string>
+    <string name="password_min_length">Password must be at least 6 characters</string>
+    <string name="passwords_not_match">Passwords do not match</string>
+    
+    <!-- Success/Error Messages -->
+    <string name="signup_successful">Signup successful!</string>
+    <string name="signup_failed">Signup failed</string>
+    <string name="network_error">Network error: </string>
+    <string name="error_processing_response">Error processing response</string>
+    
+    <!-- Login Screen -->
+    <string name="welcome_back_title">Welcome Back</string>
+    <string name="login_subtitle">Sign in to your account</string>
+    <string name="login_button">Sign In</string>
+    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="sign_up_link">Sign Up</string>
+    <string name="login_successful">Login successful!</string>
+    <string name="login_failed">Login failed</string>
+    
+    <!-- Dashboard Strings -->
+    <string name="quick_actions">Quick Actions</string>
+    <string name="browse_tours">Browse Tours</string>
+    <string name="my_bookings">My Bookings</string>
+    <string name="recent_tours">Recent Tours</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_tours">Tours</string>
+    <string name="nav_bookings">Bookings</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_users">Users</string>
+    <string name="nav_schedule">Schedule</string>
+    <string name="nav_reports">Reports</string>
+    
+    <!-- Admin Dashboard -->
+    <string name="manage_users">Manage Users</string>
+    <string name="manage_tours">Manage Tours</string>
+    <string name="manage_bookings">Manage Bookings</string>
+    <string name="reports">Reports</string>
+    <string name="total_users">Total Users</string>
+    <string name="total_tours">Total Tours</string>
+    <string name="total_bookings">Total Bookings</string>
+    <string name="recent_activity">Recent Activity</string>
+    
+    <!-- Guide Dashboard -->
+    <string name="my_tours">My Tours</string>
+    <string name="my_schedule">My Schedule</string>
+    <string name="my_bookings_guide">My Bookings</string>
+    <string name="upcoming_tours">Upcoming Tours</string>
+    <string name="total_tours_guide">Total Tours</string>
+    <string name="total_bookings_guide">Total Bookings</string>
+    <string name="rating">Rating</string>
+    
+    <!-- Main Activity -->
+    <string name="welcome_message">Welcome to Tour Booking System!\n\nYour account has been created successfully.</string>
 </resources>
