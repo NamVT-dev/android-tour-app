@@ -28,7 +28,13 @@ public class Navigator {
                 throw new IllegalArgumentException("Unknown screen: " + screen);
         }
 
+        // Thêm cờ để đảm bảo activity cũ bị xóa đúng cách và không bị delay destroy
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+
+        if (context instanceof android.app.Activity) {
+            ((android.app.Activity) context).finish();
+        }
     }
 
     public static void goToAndFinish(Context context, Screen screen) {

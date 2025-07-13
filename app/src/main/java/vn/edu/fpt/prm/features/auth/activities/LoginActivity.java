@@ -91,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     Logger.debug("LoginActivity", "Login successful: " + authResponse.getToken());
 
+                    LoadingFullScreen.hide(loadingFullScreen);
                     // Navigate to home screen
                     Navigator.goToAndFinish(LoginActivity.this, Screen.HOME);
                 } else {

@@ -23,10 +23,12 @@ public class AuthInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         String token = AuthManager.getToken(context); // Lấy token từ SharedPreferences
+        Logger.debug("AuthInterceptor", "Intercepting request to add Authorization header");
         Request original = chain.request();
 
         if (token == null || token.isEmpty()) {
             // If token is null or empty, redirect to login
+            Logger.debug("AuthInterceptor", "Token is null or empty, redirecting to login");
             return chain.proceed(original);
         }
 
