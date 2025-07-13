@@ -1,6 +1,8 @@
 package vn.edu.fpt.prm.features.tour;
 
-public class Guide {
+import java.io.Serializable;
+
+public class Guide implements Serializable {
     private String id;
     private String name;
     private String email;

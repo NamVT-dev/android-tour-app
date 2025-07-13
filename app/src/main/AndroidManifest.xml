@@ -41,6 +41,12 @@
         <activity
             android:name=".features.tour.activities.TourListActivity"
             android:exported="false" />
+
+        <!-- Tour Detail Activity-->
+        <activity
+            android:name=".features.tour.activities.TourDetailActivity"
+            android:exported="false" />
     </application>
+
 
 </manifest>

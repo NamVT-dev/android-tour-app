@@ -1,6 +1,7 @@
 package vn.edu.fpt.prm.features.tour.activities;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Rect;
 import android.location.Location;
@@ -26,6 +27,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +87,12 @@ public class TourListActivity extends AppCompatActivity {
         tourAdapter = new TourAdapter(this, new ArrayList<>(), tour -> {
             // Handle tour item click
             Logger.debug("TourListActivity", "Tour clicked: " + tour.getName());
-            // You can start a new activity or show tour details here
+
+            Intent intent = new Intent(this, TourDetailActivity.class);
+            intent.putExtra("tour", tour);
+            this.startActivity(intent);
+
+            Logger.debug("TourListActivity", "Navigating to TourDetailActivity with tour: " + tour.getName());
         });
         recyclerView.setAdapter(tourAdapter);
 
