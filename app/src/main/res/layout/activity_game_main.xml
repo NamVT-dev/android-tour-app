@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gamebackground"
+    tools:context=".features.game.activities.GameMainActivity">
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Thời gian còn lại: 30"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textViewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/balloon1"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon2"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon3"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="2"
+            app:layout_row="0"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon4"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="3"
+            app:layout_row="0"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon5"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="4"
+            app:layout_row="0"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon6"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="5"
+            app:layout_row="0"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon7"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="6"
+            app:layout_row="0"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon8"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="0"
+            app:layout_row="1"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon9"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="1"
+            app:layout_row="1"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon10"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="2"
+            app:layout_row="1"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon11"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="3"
+            app:layout_row="1"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon12"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="4"
+            app:layout_row="1"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon13"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="5"
+            app:layout_row="1"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon14"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="6"
+            app:layout_row="1"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon15"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="0"
+            app:layout_row="2"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon16"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="1"
+            app:layout_row="2"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon17"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="2"
+            app:layout_row="2"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon18"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="3"
+            app:layout_row="2"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon19"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="4"
+            app:layout_row="2"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon20"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="5"
+            app:layout_row="2"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon21"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="6"
+            app:layout_row="2"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon22"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="0"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon23"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="1"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon24"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="2"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon25"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="3"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon26"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="4"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon27"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="5"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon28"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="6"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon29"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="0"
+            app:layout_row="3"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon30"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="0"
+            app:layout_row="4"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon31"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="1"
+            app:layout_row="4"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon32"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="2"
+            app:layout_row="4"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon33"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="3"
+            app:layout_row="4"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon34"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="4"
+            app:layout_row="4"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon35"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="5"
+            app:layout_row="4"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon36"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="6"
+            app:layout_row="4"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon37"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="0"
+            app:layout_row="5"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon38"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="1"
+            app:layout_row="5"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon39"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="2"
+            app:layout_row="5"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon40"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="3"
+            app:layout_row="5"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon41"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="4"
+            app:layout_row="5"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon42"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="5"
+            app:layout_row="5"
+            app:srcCompat="@drawable/balloon" />
+
+        <ImageView
+            android:id="@+id/balloon43"
+            android:layout_width="58dp"
+            android:layout_height="60dp"
+            android:onClick="increaseScore"
+            app:layout_column="6"
+            app:layout_row="5"
+            app:srcCompat="@drawable/balloon" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Điểm: 0"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
