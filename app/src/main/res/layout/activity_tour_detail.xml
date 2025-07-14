@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Banner -->
+    <FrameLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_banner"
+            android:layerType="software"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tour_demo"
+            android:contentDescription="@string/tour_banner" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_overlay"
+            android:alpha="0.65"/>
+
+        <TextView
+            android:id="@+id/tv_tour_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="16dp"
+            android:text="@string/the_austrian_mountains"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+    </FrameLayout>
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:backgroundTint="@android:color/white"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/primary_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/banner_container"
+        app:layout_constraintBottom_toTopOf="@id/btn_payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Description & Chips -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/primary_blue"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/breathtaking_views_of_the_alps_and_unforgettable_experiences_await_you"
+                        android:textColor="@android:color/black"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:singleLine="true"
+                        app:chipSpacing="8dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_rating"
+                            android:text="@string/rating_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipIcon="@drawable/ic_star_outline"
+                            app:chipIconTint="@color/primary_blue"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_duration"
+                            android:text="@string/duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipIcon="@drawable/ic_calendar_outline"
+                            app:chipIconTint="@color/primary_blue"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_price"
+                            android:text="@string/duration_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:chipIcon="@drawable/ic_money_outline"
+                            app:chipIconTint="@color/primary_blue"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"/>
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Start Location + Date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_location_outline"
+                    app:tint="@color/primary_blue" />
+
+                <TextView
+                    android:id="@+id/tv_start_location"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/ho_chi_minh_city"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="24dp"
+                    android:src="@drawable/ic_calendar_outline"
+                    app:tint="@color/primary_blue" />
+
+                <TextView
+                    android:id="@+id/tv_start_date"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/aug_16_2025"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!-- Section Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/destinations"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/primary_blue"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Destinations List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_locations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+            <!-- Map -->
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/tour_map"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Guides Section -->
+            <TextView
+                android:id="@+id/tv_guides"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/guides"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                android:textColor="@color/primary_blue"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_guides"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Payment Button -->
+    <Button
+        android:id="@+id/btn_payment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/only_499_000"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:drawablePadding="8dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/primary_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

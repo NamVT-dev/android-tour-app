@@ -1,0 +1,28 @@
+package vn.edu.fpt.prm.features.booking;
+
+public class Booking {
+    private String tourName;
+    private double price;
+    private boolean paid;
+    private String createdAt;
+
+    public Booking(String tourName, double price, boolean paid, String createdAt) {
+        this.tourName = tourName;
+        this.price = price;
+        this.paid = paid;
+        this.createdAt = createdAt;
+    }
+
+    // Getter và Setter
+    public String getTourName() { return tourName; }
+    public void setTourName(String tourName) { this.tourName = tourName; }
+
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
+
+    public boolean isPaid() { return paid; }
+    public void setPaid(boolean paid) { this.paid = paid; }
+
+    public String getCreatedAt() { return createdAt; }
+    public void setCreatedAt(String createdAt) { this.createdAt = createdAt; }
+}

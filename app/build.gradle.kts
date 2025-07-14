@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tour_booking_system"
+    namespace = "vn.edu.fpt.prm"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.tour_booking_system"
+        applicationId = "vn.edu.fpt.prm"
         minSdk = 27
         targetSdk = 35
         versionCode = 1
@@ -37,6 +37,24 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+
+    // Glide
+    implementation(libs.glide)
+    implementation(libs.play.services.maps)
+    implementation(libs.gridlayout)
+    annotationProcessor(libs.glide.compiler)
+
+    // Google Play Services
+    implementation(libs.play.services.location)
+
+
+    // OkHttp3
+    implementation(libs.okhttp3.logging.interceptor)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

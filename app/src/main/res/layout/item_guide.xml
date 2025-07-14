@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical">
+
+    <!-- Left side: Avatar + Name (in a vertical layout) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Guide Avatar -->
+        <ImageView
+            android:id="@+id/img_guide"
+            android:layerType="software"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/guide_avatar"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
+            android:background="@drawable/fvivu" />
+
+        <!-- Guide Name -->
+        <TextView
+            android:id="@+id/tv_guide_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/guide_name"
+            android:textSize="14sp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <!-- Right side: Role -->
+    <TextView
+        android:id="@+id/tv_guide_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tour_guide"
+        android:textStyle="italic"
+        android:textColor="@color/primary_blue"
+        android:textSize="13sp" />
+</LinearLayout>
