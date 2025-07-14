@@ -28,6 +28,18 @@
             android:scaleType="centerCrop"
             android:contentDescription="@string/app_name" />
 
+        <ImageView
+            android:id="@+id/img_game_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/console"
+            android:scaleType="centerInside"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/game"
+            android:clickable="true"
+            android:focusable="true" />
+
         <View
             android:layout_width="0dp"
             android:layout_height="1dp"
