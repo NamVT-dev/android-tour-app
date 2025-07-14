@@ -51,6 +51,10 @@ dependencies {
     // Google Play Services
     implementation(libs.play.services.location)
 
+
+    // OkHttp3
+    implementation(libs.okhttp3.logging.interceptor)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
