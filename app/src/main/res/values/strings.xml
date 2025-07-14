@@ -1,18 +1,29 @@
 <resources>
     <string name="app_name">TourBookingSystem</string>
-    
+    <string name="edit_profile_title">Edit your profile</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="change_password">Change password</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="cd_open_camera">Open Camera</string>
+    <string name="cd_open_gallery">Open Gallery</string>
+    <string name="cd_avatar">Profile Avatar</string>
+
     <!-- Signup Screen -->
     <string name="welcome_title">Welcome</string>
     <string name="welcome_subtitle">Create your account to get started</string>
     <string name="full_name_hint">Full Name</string>
-    <string name="email_hint">Email Address</string>
     <string name="password_hint">Password</string>
     <string name="confirm_password_hint">Confirm Password</string>
     <string name="create_account_button">Create Account</string>
     <string name="already_have_account">Already have an account? </string>
     <string name="sign_in_link">Sign In</string>
     <string name="login_coming_soon">Login screen coming soon!</string>
-    
+
     <!-- Validation Messages -->
     <string name="name_required">Name is required</string>
     <string name="email_required">Email is required</string>
@@ -20,13 +31,13 @@
     <string name="password_required">Password is required</string>
     <string name="password_min_length">Password must be at least 6 characters</string>
     <string name="passwords_not_match">Passwords do not match</string>
-    
+
     <!-- Success/Error Messages -->
     <string name="signup_successful">Signup successful!</string>
     <string name="signup_failed">Signup failed</string>
     <string name="network_error">Network error: </string>
     <string name="error_processing_response">Error processing response</string>
-    
+
     <!-- Login Screen -->
     <string name="welcome_back_title">Welcome Back</string>
     <string name="login_subtitle">Sign in to your account</string>
@@ -35,7 +46,7 @@
     <string name="sign_up_link">Sign Up</string>
     <string name="login_successful">Login successful!</string>
     <string name="login_failed">Login failed</string>
-    
+
     <!-- Dashboard Strings -->
     <string name="quick_actions">Quick Actions</string>
     <string name="browse_tours">Browse Tours</string>
@@ -49,7 +60,7 @@
     <string name="nav_users">Users</string>
     <string name="nav_schedule">Schedule</string>
     <string name="nav_reports">Reports</string>
-    
+
     <!-- Admin Dashboard -->
     <string name="manage_users">Manage Users</string>
     <string name="manage_tours">Manage Tours</string>
@@ -59,7 +70,7 @@
     <string name="total_tours">Total Tours</string>
     <string name="total_bookings">Total Bookings</string>
     <string name="recent_activity">Recent Activity</string>
-    
+
     <!-- Guide Dashboard -->
     <string name="my_tours">My Tours</string>
     <string name="my_schedule">My Schedule</string>
@@ -68,7 +79,7 @@
     <string name="total_tours_guide">Total Tours</string>
     <string name="total_bookings_guide">Total Bookings</string>
     <string name="rating">Rating</string>
-    
+
     <!-- Main Activity -->
     <string name="welcome_message">Welcome to Tour Booking System!\n\nYour account has been created successfully.</string>
     <string name="austria">Austria</string>
