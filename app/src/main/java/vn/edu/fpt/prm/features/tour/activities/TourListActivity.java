@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +39,7 @@ import retrofit2.Response;
 import vn.edu.fpt.prm.R;
 import vn.edu.fpt.prm.core.utils.Logger;
 import vn.edu.fpt.prm.core.widget.Toaster;
+import vn.edu.fpt.prm.features.game.activities.GameHomeActivity;
 import vn.edu.fpt.prm.features.tour.Tour;
 import vn.edu.fpt.prm.features.tour.TourService;
 import vn.edu.fpt.prm.features.tour.adapter.TourAdapter;
@@ -47,6 +49,7 @@ public class TourListActivity extends AppCompatActivity {
     private EditText etSearch;
     private ImageButton filterButton;
     private RecyclerView recyclerView;
+    private ImageView gameIcon;
 
     private TourAdapter tourAdapter;
     private List<Tour> allTours = new ArrayList<>();
@@ -82,6 +85,7 @@ public class TourListActivity extends AppCompatActivity {
         etSearch = findViewById(R.id.et_search);
         filterButton = findViewById(R.id.btn_filter);
         recyclerView = findViewById(R.id.recycler_view_tours);
+        gameIcon = findViewById(R.id.img_game_icon);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         tourAdapter = new TourAdapter(this, new ArrayList<>(), tour -> {
@@ -103,6 +107,13 @@ public class TourListActivity extends AppCompatActivity {
         handleGetAllTours(); // Fetch all tours from the server
         setupSearchTextListener(); // Set up search functionality
         filterButton.setOnClickListener(v -> showDistanceFilterDialog()); // Set up filter button click listener
+        gameIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TourListActivity.this, GameHomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setupSearchTextListener() {
