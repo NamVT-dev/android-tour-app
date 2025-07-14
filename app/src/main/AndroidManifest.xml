@@ -60,7 +60,6 @@
         <activity
             android:name=".features.user.activities.EditProfileActivity"
             android:exported="false" />
-    </application>
 
 
         <activity
