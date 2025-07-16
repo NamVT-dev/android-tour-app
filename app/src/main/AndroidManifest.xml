@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.edu.fpt.prm">
 
-
-
-
     <!-- Khai báo các quyền -->
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -40,6 +38,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+      
         <!-- Khai báo các activity-->
         <!-- Launch Activity-->
 
@@ -51,23 +50,34 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Signup Activity -->
+        </activity> 
+      
+        <!-- Signup Activity -->
         <activity
             android:name=".features.auth.activities.SignupActivity"
-            android:exported="false" /> <!-- Tour List Activity -->
+            android:exported="false" /> 
+      
+        <!-- Tour List Activity -->
         <activity
             android:name=".features.auth.activities.LoginActivity"
-            android:exported="false" /> <!-- Tour Detail Activity -->
+            android:exported="false" /> 
+      
+        <!-- Tour Detail Activity -->
         <activity
             android:name=".features.tour.activities.TourDetailActivity"
+            android:exported="false" />
+      
+        <!-- Checkout Activity -->
+        <activity
+            android:name=".features.checkout.activities.CheckoutActivity"
             android:exported="false" />
 
         <!-- Profile Activity-->
         <activity
             android:name=".features.user.activities.ProfileActivity"
-            android:exported="false" />
-
-        <!-- Edit Profile Activity-->
+            android:exported="false" /> 
+      
+        <!-- Edit Profile Activity -->
         <activity
             android:name=".features.user.activities.EditProfileActivity"
             android:exported="false" />
@@ -82,12 +92,10 @@
             android:name=".features.booking.activities.BookingListActivity"
             android:exported="false" />
 
-
-
-
         <activity
             android:name=".features.game.activities.GameMainActivity"
             android:exported="false" />
+      
         <activity
             android:name=".features.game.activities.GameResultActivity"
             android:exported="false" />

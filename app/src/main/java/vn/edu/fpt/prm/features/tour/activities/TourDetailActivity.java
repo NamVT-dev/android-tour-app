@@ -1,10 +1,14 @@
 package vn.edu.fpt.prm.features.tour.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,11 +20,19 @@ import com.google.android.gms.maps.MapView;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import vn.edu.fpt.prm.R;
+import vn.edu.fpt.prm.core.utils.AuthPrefs;
 import vn.edu.fpt.prm.core.widget.Toaster;
+import vn.edu.fpt.prm.features.checkout.CheckoutService;
+import vn.edu.fpt.prm.features.checkout.activities.CheckoutActivity;
+import vn.edu.fpt.prm.features.checkout.dto.response.CheckoutResponse;
 import vn.edu.fpt.prm.features.tour.Tour;
 import vn.edu.fpt.prm.features.tour.adapter.GuideAdapter;
 import vn.edu.fpt.prm.features.tour.adapter.LocationAdapter;
+import vn.edu.fpt.prm.features.user.activities.ProfileActivity;
 
 public class TourDetailActivity extends AppCompatActivity {
     private ImageView imgBanner;
@@ -31,6 +43,8 @@ public class TourDetailActivity extends AppCompatActivity {
 
     private GuideAdapter guideAdapter;
     private LocationAdapter locationAdapter;
+    private CheckoutService checkoutService = new CheckoutService(this);
+    private Tour tour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +68,7 @@ public class TourDetailActivity extends AppCompatActivity {
         rvLocations = findViewById(R.id.rv_locations);
 
         // Get tour data from intent
-        Tour tour = (Tour) getIntent().getSerializableExtra("tour");
+        tour = (Tour) getIntent().getSerializableExtra("tour");
         if (tour == null) {
             Toaster.showToast(this, "Tour data not found");
             finish();
@@ -93,8 +107,33 @@ public class TourDetailActivity extends AppCompatActivity {
     private void bindingAction() {
         btnBack.setOnClickListener(v -> onBackPressed());
 
-        btnPayment.setOnClickListener(v ->
-            Toaster.showToast(this, "Payment button clicked")
-        );
+        btnPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String token = AuthPrefs.getToken(TourDetailActivity.this);
+                String tourId = tour.getId();
+                getCheckoutUrl(token, tourId);
+            }
+        });
+    }
+
+    private void getCheckoutUrl(String token, String id){
+        checkoutService.getCheckoutSession(token, id).enqueue(new Callback<CheckoutResponse>() {
+            @Override
+            public void onResponse(Call<CheckoutResponse> call, Response<CheckoutResponse> response) {
+                if (response.isSuccessful() && response.body() != null){
+                    String url = response.body().getSession().getUrl();
+                    Intent intent = new Intent(TourDetailActivity.this, CheckoutActivity.class);
+                    intent.putExtra("checkout_url", url);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CheckoutResponse> call, Throwable t) {
+                t.printStackTrace();
+                Toast.makeText(TourDetailActivity.this, "Không thể kết nối API", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
