@@ -1,77 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2B1B3D">
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imgAvatar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:background="@drawable/avatar_border"
-            android:scaleType="centerCrop" />
+        <!-- Top Bar with Back and Title -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingHorizontal="16dp"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:layout_marginTop="12dp"
-            android:textStyle="bold" />
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_alignParentStart="true"
+                android:contentDescription="@string/back"
+                app:tint="@color/primary_blue" />
 
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="user@example.com"
-            android:textColor="#FFD700"
-            android:textSize="16sp"
-            android:layout_marginTop="4dp" />
+            <TextView
+                android:id="@+id/txtProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
 
-        <Button
-            android:id="@+id/btnEditProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit profile"
-            android:layout_marginTop="16dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Booking"
-            android:textColor="#00BFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="24dp" />
-
-        <TableLayout
-            android:id="@+id/bookingTable"
+        <!-- Profile Content -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:stretchColumns="*"
-            android:background="#121212"
-            android:layout_marginTop="12dp">
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
 
-            <TableRow>
-                <TextView android:text="Tour Name" android:textColor="#fff" />
-                <TextView android:text="Price" android:textColor="#fff" />
-                <TextView android:text="Paid" android:textColor="#fff" />
-                <TextView android:text="Created At" android:textColor="#fff" />
-            </TableRow>
+            <!-- Avatar -->
+<!--            <ImageView-->
+<!--                android:id="@+id/imgAvatar"-->
+<!--                android:layerType="software"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:contentDescription="@string/user_avatar"-->
+<!--                android:src="@drawable/ic_launcher_foreground"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:background="@drawable/avatar_circle_border"-->
+<!--                android:layout_marginTop="8dp" />-->
 
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/user_avatar"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_foreground"
+                app:shapeAppearanceOverlay="@style/CircleImage"
+                android:background="@drawable/avatar_circle_border" />
 
+            <!-- Name -->
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/primary_blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
 
-        </TableLayout>
+            <!-- Email -->
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_example_com"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
 
+            <!-- Edit Profile -->
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_profile"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/primary_blue"
+                android:textColor="@android:color/white" />
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Menu Items -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- My Bookings -->
+                <LinearLayout
+                    android:id="@+id/btnMyBookings"
+                    style="@style/ProfileMenuItemStyle">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@string/my_bookings"
+                        android:src="@drawable/ic_book_outline"
+                        app:tint="@color/primary_blue" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/my_bookings"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/chevron_right"
+                        android:src="@drawable/ic_chevron_right_outline"
+                        app:tint="@color/black" />
+                </LinearLayout>
+
+                <!-- Change Password -->
+                <LinearLayout
+                    android:id="@+id/btnChangePassword"
+                    style="@style/ProfileMenuItemStyle">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@string/change_password"
+                        android:src="@drawable/ic_lock_outline"
+                        app:tint="@color/primary_blue" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/change_password"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/chevron_right"
+                        android:src="@drawable/ic_chevron_right_outline"
+                        app:tint="@color/black" />
+                </LinearLayout>
+
+                <!-- Logout -->
+                <LinearLayout
+                    android:id="@+id/btnLogout"
+                    style="@style/ProfileMenuItemStyle">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@string/log_out"
+                        android:src="@drawable/ic_logout_outline"
+                        app:tint="@color/primary_blue" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/log_out"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/black" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="@string/chevron_right"
+                        android:src="@drawable/ic_chevron_right_outline"
+                        app:tint="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

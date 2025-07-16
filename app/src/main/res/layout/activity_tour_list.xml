@@ -48,11 +48,12 @@
         <!-- User Avatar (bên phải) -->
         <ImageView
             android:id="@+id/img_avatar"
+            android:layerType="software"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_profile"
             android:scaleType="centerCrop"
-            android:background="@drawable/circle_background"
+            android:background="@drawable/circle_white_background"
             android:contentDescription="@string/avatar" />
     </LinearLayout>
 
@@ -78,7 +79,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:autofillHints="search"
-            android:hint="@string/t_m_ki_m_theo_t_n_tour_a_i_m"
+            android:hint="@string/search_tour"
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/ic_search"
             android:drawablePadding="10dp"

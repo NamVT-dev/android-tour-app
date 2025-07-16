@@ -1,28 +1,78 @@
 package vn.edu.fpt.prm.features.booking;
 
-public class Booking {
-    private String tourName;
-    private double price;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+import vn.edu.fpt.prm.features.tour.Tour;
+import vn.edu.fpt.prm.features.user.User;
+
+public class Booking implements Serializable {
+    private String id;
+    private Tour tour;
+    private User user;
+    private BigDecimal price;
     private boolean paid;
     private String createdAt;
 
-    public Booking(String tourName, double price, boolean paid, String createdAt) {
-        this.tourName = tourName;
+    public Booking() {
+    }
+
+    public Booking(String id, Tour tour, User user, BigDecimal price, boolean paid, String createdAt) {
+        this.id = id;
+        this.tour = tour;
+        this.user = user;
         this.price = price;
         this.paid = paid;
         this.createdAt = createdAt;
     }
 
-    // Getter và Setter
-    public String getTourName() { return tourName; }
-    public void setTourName(String tourName) { this.tourName = tourName; }
+    public String getId() {
+        return id;
+    }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    public boolean isPaid() { return paid; }
-    public void setPaid(boolean paid) { this.paid = paid; }
+    public Tour getTour() {
+        return tour;
+    }
 
-    public String getCreatedAt() { return createdAt; }
-    public void setCreatedAt(String createdAt) { this.createdAt = createdAt; }
+    public void setTour(Tour tour) {
+        this.tour = tour;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
 }

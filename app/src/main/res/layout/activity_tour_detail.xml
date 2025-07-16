@@ -27,17 +27,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/gradient_overlay"
             android:alpha="0.65"/>
-
-        <TextView
-            android:id="@+id/tv_tour_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:padding="16dp"
-            android:text="@string/the_austrian_mountains"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
     </FrameLayout>
 
     <!-- Back Button -->
@@ -71,107 +60,128 @@
             android:padding="24dp"
             android:gravity="center_horizontal">
 
-            <!-- Description & Chips -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/primary_blue"
-                app:cardElevation="2dp"
-                android:layout_marginBottom="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:id="@+id/tv_description"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/breathtaking_views_of_the_alps_and_unforgettable_experiences_await_you"
-                        android:textColor="@android:color/black"
-                        android:lineSpacingExtra="4dp"/>
-
-                    <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/chip_group_info"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        app:singleLine="true"
-                        app:chipSpacing="8dp">
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_rating"
-                            android:text="@string/rating_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:chipIcon="@drawable/ic_star_outline"
-                            app:chipIconTint="@color/primary_blue"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"/>
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_duration"
-                            android:text="@string/duration"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:chipIcon="@drawable/ic_calendar_outline"
-                            app:chipIconTint="@color/primary_blue"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"/>
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip_price"
-                            android:text="@string/duration_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:chipIcon="@drawable/ic_money_outline"
-                            app:chipIconTint="@color/primary_blue"
-                            style="@style/Widget.MaterialComponents.Chip.Choice"/>
-                    </com.google.android.material.chip.ChipGroup>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Start Location + Date -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
+                android:orientation="vertical"
+                android:paddingBottom="24dp"
+                android:background="@android:color/white">
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_location_outline"
-                    app:tint="@color/primary_blue" />
+                <!-- Name & Location -->
+                <TextView
+                    android:id="@+id/tv_tour_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/the_austrian_mountains"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/tv_start_location"
-                    android:layout_marginStart="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/ho_chi_minh_city"
                     android:textSize="14sp"
-                    android:textColor="@android:color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"/>
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="24dp"
-                    android:src="@drawable/ic_calendar_outline"
-                    app:tint="@color/primary_blue" />
+                <!-- Rating - Duration - Start Date -->
+                <LinearLayout
+                    android:id="@+id/info_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:layout_marginBottom="12dp">
 
+                    <!-- Rating -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="@string/rating"
+                            android:src="@drawable/ic_star_outline"
+                            app:tint="@color/primary_blue" />
+
+                        <TextView
+                            android:id="@+id/tv_rating"
+                            android:layout_marginStart="6dp"
+                            android:text="@string/rating_value"
+                            android:textSize="13sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <!-- Duration -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="@string/duration"
+                            android:src="@drawable/ic_duration_outline"
+                            app:tint="@color/primary_blue" />
+
+                        <TextView
+                            android:id="@+id/tv_duration"
+                            android:layout_marginStart="6dp"
+                            android:text="@string/duration_value"
+                            android:textSize="13sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <!-- Start Date -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:contentDescription="@string/start_date"
+                            android:src="@drawable/ic_calendar_outline"
+                            app:tint="@color/primary_blue" />
+
+                        <TextView
+                            android:id="@+id/tv_start_date"
+                            android:layout_marginStart="6dp"
+                            android:text="@string/aug_16_2025"
+                            android:textSize="13sp"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <!-- Description -->
                 <TextView
-                    android:id="@+id/tv_start_date"
-                    android:layout_marginStart="8dp"
-                    android:text="@string/aug_16_2025"
-                    android:textStyle="bold"
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description"
                     android:textSize="14sp"
                     android:textColor="@android:color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:lineSpacingExtra="4dp"/>
             </LinearLayout>
 
             <!-- Section Title -->
@@ -196,13 +206,13 @@
             <com.google.android.gms.maps.MapView
                 android:id="@+id/tour_map"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="400dp"
                 android:layout_marginTop="16dp"/>
 
             <!-- Guides Section -->
             <TextView
                 android:id="@+id/tv_guides"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/guides"
@@ -215,7 +225,6 @@
                 android:id="@+id/rv_guides"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

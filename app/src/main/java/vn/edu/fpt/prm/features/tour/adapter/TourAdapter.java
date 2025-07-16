@@ -109,7 +109,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
             // Set the tour details to the views
             tvTourName.setText(tour.getName());
             tvSummary.setText(tour.getSummary());
-            tvDuration.setText(String.valueOf(tour.getDuration()));
+            tvDuration.setText(tour.getDuration() + " days");
             tvRating.setText(String.valueOf(tour.getRatingsAverage()));
             tvPrice.setText(Formatter.formatCurrency(tour.getPrice().intValue()));
 
