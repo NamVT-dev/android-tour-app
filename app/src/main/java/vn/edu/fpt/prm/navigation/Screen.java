@@ -5,4 +5,7 @@ public enum Screen {
     SIGNUP,
     HOME,
     TOUR_DETAIL,
+    PROFILE,
+    MY_BOOKINGS,
+    CHANGE_PASSWORD,
 }

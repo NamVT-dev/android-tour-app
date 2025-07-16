@@ -1,12 +1,14 @@
 package vn.edu.fpt.prm.features.booking;
 
+import java.math.BigDecimal;
+
 public class Booking {
     private String tourName;
-    private double price;
+    private BigDecimal price;
     private boolean paid;
     private String createdAt;
 
-    public Booking(String tourName, double price, boolean paid, String createdAt) {
+    public Booking(String tourName, BigDecimal price, boolean paid, String createdAt) {
         this.tourName = tourName;
         this.price = price;
         this.paid = paid;
@@ -17,8 +19,8 @@ public class Booking {
     public String getTourName() { return tourName; }
     public void setTourName(String tourName) { this.tourName = tourName; }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 
     public boolean isPaid() { return paid; }
     public void setPaid(boolean paid) { this.paid = paid; }

@@ -25,6 +25,17 @@ public class AuthManager {
         Logger.debug("AuthManager", "Saved token: " + token + ", user: " + userJson);
     }
 
+    public static void saveUser(Context context, User user) {
+        SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String userJson = gson.toJson(user);
+        prefs.edit()
+                .putString(KEY_USER, userJson)
+                .apply();
+
+        Logger.debug("AuthManager", "Saved user: " + userJson);
+    }
+
     public static String getToken(Context context) {
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
                 .getString(KEY_TOKEN, null);
@@ -34,6 +45,7 @@ public class AuthManager {
         SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         String userJson = prefs.getString(KEY_USER, null);
         if (userJson == null) return null;
+        Logger.debug("AuthManager", "Retrieved user: " + userJson);
         return new Gson().fromJson(userJson, User.class);
     }
 

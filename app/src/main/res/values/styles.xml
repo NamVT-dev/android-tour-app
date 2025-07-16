@@ -11,4 +11,21 @@
         <item name="endIconTint">@color/text_hint</item>
         <item name="startIconTint">@color/text_hint</item>
     </style>
+
+    <style name="ProfileMenuItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CircleImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
 </resources> 

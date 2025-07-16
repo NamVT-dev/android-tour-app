@@ -3,6 +3,10 @@
 
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.edu.fpt.prm">
+
+
+
+
     <!-- Khai báo các quyền -->
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,6 +17,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <application
@@ -26,13 +31,20 @@
         android:theme="@style/Theme.TourBookingSystem"
         tools:targetApi="31">
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
         <!-- Khai báo các activity-->
         <!-- Launch Activity-->
+
         <activity
-            android:name=".features.game.activities.GameHomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".features.auth.activities.LoginActivity"
+            android:name=".features.tour.activities.TourListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,12 +56,11 @@
             android:name=".features.auth.activities.SignupActivity"
             android:exported="false" /> <!-- Tour List Activity -->
         <activity
-            android:name=".features.tour.activities.TourListActivity"
+            android:name=".features.auth.activities.LoginActivity"
             android:exported="false" /> <!-- Tour Detail Activity -->
         <activity
             android:name=".features.tour.activities.TourDetailActivity"
             android:exported="false" />
-
 
         <!-- Profile Activity-->
         <activity
@@ -61,12 +72,28 @@
             android:name=".features.user.activities.EditProfileActivity"
             android:exported="false" />
 
+        <!-- Change Password Activity-->
+        <activity
+            android:name=".features.user.activities.ChangePasswordActivity"
+            android:exported="false" />
+
+        <!-- Booking Activity-->
+        <activity
+            android:name=".features.booking.activities.BookingListActivity"
+            android:exported="false" />
+
+
+
 
         <activity
             android:name=".features.game.activities.GameMainActivity"
             android:exported="false" />
         <activity
             android:name=".features.game.activities.GameResultActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".features.game.activities.GameHomeActivity"
             android:exported="false" />
     </application>
 
