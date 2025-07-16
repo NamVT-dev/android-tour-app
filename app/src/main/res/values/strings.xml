@@ -94,7 +94,7 @@
     <string name="price_discount">$200.00</string>
     <string name="avatar">Avatar</string>
     <string name="game">Game</string>
-    <string name="search_tour">Search by tour name, description…</string>
+    <string name="search_tour">Search by tour name, address…</string>
     <string name="filter">Filter distance</string>
     <string name="destinations">Destinations</string>
     <string name="guides">Guides</string>
@@ -129,4 +129,5 @@
     <string name="location_address">Bến Thành Market, District 1</string>
     <string name="location_day">Day 1</string>
     <string name="location_description">Mô tả địa điểm nổi bật</string>
+    <string name="enter_distance_in_km">Distance</string>
 </resources>
