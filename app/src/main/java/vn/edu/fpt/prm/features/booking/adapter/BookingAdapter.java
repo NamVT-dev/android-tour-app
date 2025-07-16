@@ -12,6 +12,7 @@ import java.util.List;
 
 import vn.edu.fpt.prm.R;
 import vn.edu.fpt.prm.core.utils.Formatter;
+import vn.edu.fpt.prm.core.utils.Logger;
 import vn.edu.fpt.prm.features.booking.Booking;
 
 public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingViewHolder> {
@@ -23,6 +24,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
 
     public void setData(List<Booking> bookings) {
         this.bookingList = bookings;
+        Logger.debug("BookingAdapter", "Booking List Size: " + bookingList.size());
         notifyDataSetChanged();
     }
 
@@ -37,7 +39,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
     @Override
     public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
         Booking booking = bookingList.get(position);
-        holder.tvTourName.setText(booking.getTourName());
+        holder.tvTourName.setText(booking.getTour().getName());
         holder.tvPrice.setText(Formatter.formatCurrency(booking.getPrice().intValue()));
         holder.tvPaid.setText(booking.isPaid() ? "Paid" : "Unpaid");
         holder.tvCreatedAt.setText(booking.getCreatedAt());
