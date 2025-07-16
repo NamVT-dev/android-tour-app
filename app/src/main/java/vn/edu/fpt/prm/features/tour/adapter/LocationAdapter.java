@@ -46,11 +46,12 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.Locati
     }
 
     static class LocationViewHolder extends RecyclerView.ViewHolder {
-        TextView tvDescription, tvDay;
+        TextView tvAddress, tvDescription, tvDay;
 
         public LocationViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvDescription = itemView.findViewById(R.id.tv_location_name);
+            tvAddress = itemView.findViewById(R.id.tv_location_address);
+            tvDescription = itemView.findViewById(R.id.tv_location_description);
             tvDay = itemView.findViewById(R.id.tv_day_number);
         }
     }

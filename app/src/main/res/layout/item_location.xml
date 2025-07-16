@@ -2,30 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingTop="8dp"
-    android:paddingBottom="8dp"
-    android:gravity="center_vertical">
+    android:paddingBottom="8dp">
 
-    <!-- Location Name -->
-    <TextView
-        android:id="@+id/tv_location_name"
-        android:layout_width="0dp"
+    <!-- Hàng: Địa chỉ + Ngày -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/ha_long_bay"
-        android:textColor="@android:color/black"
-        android:textSize="14sp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-    <!-- Day Number -->
+        <TextView
+            android:id="@+id/tv_location_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/location_address"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_day_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location_day"
+            android:textStyle="bold"
+            android:textColor="@color/primary_blue"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Mô tả -->
     <TextView
-        android:id="@+id/tv_day_number"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_location_description"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/day_1"
-        android:textStyle="bold"
-        android:textColor="@color/primary_blue"
-        android:textSize="14sp"
-        android:layout_marginStart="16dp" />
-
+        android:text="@string/location_description"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="13sp"
+        android:layout_marginTop="2dp" />
 </LinearLayout>

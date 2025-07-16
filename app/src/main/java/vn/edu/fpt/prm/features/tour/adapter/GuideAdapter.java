@@ -33,6 +33,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.GuideViewHol
         for (Guide guide : guideList) {
             Logger.debug("GuideAdapter", "Guide Name: " + guide.getName() + ", Role: " + guide.getRole() + ", Photo: " + guide.getPhoto());
         }
+        Logger.debug("GuideAdapter", "Guide List Size: " + guideList.size());
         notifyDataSetChanged();
     }
 
@@ -54,6 +55,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.GuideViewHol
                 .load(guide.getPhoto())
                 .placeholder(R.drawable.placeholder)
                 .error(R.drawable.placeholder)
+                .circleCrop()
                 .into(holder.imgGuide);
     }
 
