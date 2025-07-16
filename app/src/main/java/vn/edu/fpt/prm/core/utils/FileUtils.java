@@ -12,8 +12,11 @@ public class FileUtils {
     public static Uri getImageUri(Context context, Bitmap bitmap) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(
-                context.getContentResolver(), bitmap, "temp", null);
+        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "Title", null);
+
+        if (path == null) {
+            return null;
+        }
         return Uri.parse(path);
     }
 

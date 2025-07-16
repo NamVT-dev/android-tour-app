@@ -23,6 +23,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -37,6 +38,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import vn.edu.fpt.prm.R;
+import vn.edu.fpt.prm.core.prefs.AuthManager;
 import vn.edu.fpt.prm.core.utils.Logger;
 import vn.edu.fpt.prm.core.widget.Toaster;
 import vn.edu.fpt.prm.features.game.activities.GameHomeActivity;
@@ -44,12 +46,16 @@ import vn.edu.fpt.prm.features.tour.Tour;
 import vn.edu.fpt.prm.features.tour.TourService;
 import vn.edu.fpt.prm.features.tour.adapter.TourAdapter;
 import vn.edu.fpt.prm.features.tour.dto.response.TourListResponse;
+import vn.edu.fpt.prm.features.user.User;
+import vn.edu.fpt.prm.navigation.Navigator;
+import vn.edu.fpt.prm.navigation.Screen;
 
 public class TourListActivity extends AppCompatActivity {
     private EditText etSearch;
     private ImageButton filterButton;
     private RecyclerView recyclerView;
     private ImageView gameIcon;
+    private ImageView imgAvatar;
 
     private TourAdapter tourAdapter;
     private List<Tour> allTours = new ArrayList<>();
@@ -86,6 +92,7 @@ public class TourListActivity extends AppCompatActivity {
         filterButton = findViewById(R.id.btn_filter);
         recyclerView = findViewById(R.id.recycler_view_tours);
         gameIcon = findViewById(R.id.img_game_icon);
+        imgAvatar = findViewById(R.id.img_avatar);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         tourAdapter = new TourAdapter(this, new ArrayList<>(), tour -> {
@@ -106,6 +113,7 @@ public class TourListActivity extends AppCompatActivity {
     private void bindingAction() {
         handleGetAllTours(); // Fetch all tours from the server
         setupSearchTextListener(); // Set up search functionality
+        loadUserAvatar(); // Load user avatar from AuthManager
         filterButton.setOnClickListener(v -> showDistanceFilterDialog()); // Set up filter button click listener
         gameIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +122,28 @@ public class TourListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        imgAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigator.goTo(TourListActivity.this, Screen.PROFILE);
+            }
+        });
+    }
+
+    private void loadUserAvatar() {
+        User user = AuthManager.getUser(this);
+        if (user != null && user.getPhoto() != null) {
+            Logger.debug("TourListActivity", "User avatar URL: " + user.getPhoto());
+            Glide.with(this)
+                .load(user.getPhoto())
+                .placeholder(R.drawable.ic_profile)
+                .error(R.drawable.ic_profile)
+                .circleCrop()
+                .into(imgAvatar);
+        } else {
+            Logger.debug("TourListActivity", "No user avatar found, setting default image");
+            imgAvatar.setImageResource(R.drawable.ic_profile);
+        }
     }
 
     private void setupSearchTextListener() {
