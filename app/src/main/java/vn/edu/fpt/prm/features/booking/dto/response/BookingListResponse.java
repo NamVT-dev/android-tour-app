@@ -6,21 +6,21 @@ import vn.edu.fpt.prm.features.booking.Booking;
 
 public class BookingListResponse {
     private String status;
-    private Data data;
+    private List<Booking> data;
 
-    public BookingListResponse() {}
+    public String getStatus() {
+        return status;
+    }
 
-    public Data getData() {
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<Booking> getData() {
         return data;
     }
 
-    public static class Data {
-        private List<Booking> data;
-
-        public Data() {}
-
-        public List<Booking> getData() {
-            return data;
-        }
+    public void setData(List<Booking> data) {
+        this.data = data;
     }
 }
