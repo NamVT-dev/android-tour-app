@@ -125,4 +125,8 @@
     <string name="change_avatar">Change Avatar</string>
     <string name="full_name">Full Name</string>
     <string name="email">Email</string>
+    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim augue velit tristique eu viverra. Massa.</string>
+    <string name="location_address">Bến Thành Market, District 1</string>
+    <string name="location_day">Day 1</string>
+    <string name="location_description">Mô tả địa điểm nổi bật</string>
 </resources>
