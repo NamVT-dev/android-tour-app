@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.edu.fpt.prm">
     <!-- Khai báo các quyền -->
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,9 +26,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TourBookingSystem"
         tools:targetApi="31">
-
-        <!-- Khai báo các activity-->
-        <!-- Launch Activity-->
+        <activity
+            android:name=".features.checkout.activities.CheckoutActivity"
+            android:exported="false" />
+        <!-- Khai báo các activity -->
+        <!-- Launch Activity -->
         <activity
             android:name=".features.game.activities.GameHomeActivity"
             android:exported="false" />
@@ -48,20 +51,13 @@
             android:exported="false" /> <!-- Tour Detail Activity -->
         <activity
             android:name=".features.tour.activities.TourDetailActivity"
-            android:exported="false" />
-
-
-        <!-- Profile Activity-->
+            android:exported="false" /> <!-- Profile Activity -->
         <activity
             android:name=".features.user.activities.ProfileActivity"
-            android:exported="false" />
-
-        <!-- Edit Profile Activity-->
+            android:exported="false" /> <!-- Edit Profile Activity -->
         <activity
             android:name=".features.user.activities.EditProfileActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".features.game.activities.GameMainActivity"
             android:exported="false" />
